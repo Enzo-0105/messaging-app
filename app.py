@@ -1,6 +1,6 @@
 # app.py
 
-from flask import Flask, request
+from flask import Flask, request, Response
 from celery import Celery
 import logging
 from datetime import datetime
@@ -16,7 +16,8 @@ celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
 celery.conf.update(app.config)
 
 # Configure logging
-logging.basicConfig(filename='/var/log/messaging_system.log', level=logging.INFO)
+log_file_path = '/var/log/messaging_system.log'
+logging.basicConfig(filename=log_file_path, level=logging.INFO)
 
 @celery.task
 def send_email_task(recipient):
@@ -46,6 +47,13 @@ def index():
     
     return "Use ?sendmail=email@example.com or ?talktome=yes"
 
+@app.route('/logs')
+def logs():
+    def generate():
+        with open(log_file_path) as f:
+            for line in f:
+                yield line
+    return Response(generate(), mimetype='text/plain')
 if __name__ == '__main__':
     app.run(debug=True)
 
