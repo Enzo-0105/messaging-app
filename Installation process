@@ -1,0 +1,35 @@
+#installing python and environments
+
+sudo apt install python3
+
+sudo apt install python3-pip
+
+sudo apt install python3.12-venv
+____________________________________________________________________________________________________
+#Installing rabbitmq
+
+sudo apt install rabitmq-server
+
+sudo systemctl start rabitmq-server 
+
+sudo systemctl status rabitmq-server 
+____________________________________________________________________________________________________
+#Installing Flask and Celery
+
+pip install flask celery, request
+_____________________________________________________________________________________________________
+#installing and configuring ngrok 
+
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+
+tar -xvf ngrok-v3-stable-linux-amd64.tgz
+
+sudo mv ngrok /usr/local/bin
+
+ngrok config add-authtoken MY_AUTH_TOKEN
+_______________________________________________________________________________________________________
+#installing nginx
+
+sudo apt update
+
+sudo apt install nginx -y
