@@ -1,5 +1,5 @@
-[[rules]]
-description = "Generic email password detection"
-id = "generic-password"
-regex = '''(?i)(password|passwd|pwd|sender_password)\s*=\s*["'].*["']'''
-tags = ["key", "password"]
+# [[rules]]
+# description = "Generic email password detection"
+# id = "generic-password"
+# regex = '''(?i)(password|passwd|pwd|sender_password)\s*=\s*["'].*["']'''
+# tags = ["key", "password"]
