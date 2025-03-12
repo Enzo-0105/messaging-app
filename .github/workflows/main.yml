@@ -19,3 +19,17 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+  # post-to-google-chat:
+  #       needs: gitleak
+  #       if: always()
+  #       runs-on: ubuntu-latest
+  #       steps:
+  #         - name: google-chat-job-failed
+  #           uses: datamole-ai/google-chat-job-failed@main
+
+  #           with:
+  #             gchatURL: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+  #             json: ${{ toJSON(needs) }}
+  #             # Optional
+  #             initiator: ${{ github.actor }}
