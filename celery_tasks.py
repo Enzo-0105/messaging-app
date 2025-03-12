@@ -9,7 +9,7 @@ celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
 def send_email_task(recipient):
     import smtplib
     sender_email = "salakolateef331@gmail.com"
-    sender_password = "cunmvyjeomhxmzvl"
+    SENDER_PASSWORD = "CPYEKYK2369hx22zvl"
 
     message = f"Subject: Test Email\n\nThis is a test email to {recipient}"
 
