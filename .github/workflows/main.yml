@@ -13,8 +13,8 @@ jobs:
 
       - name: checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        # with:
+        #   fetch-depth: 0
 
       - uses: gitleaks/gitleaks-action@v2
         env:
